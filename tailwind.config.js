@@ -22,6 +22,16 @@ module.exports = {
         aqua: '#00FFFF',
         skyBlue: '#87CEEB',
         dodgerBlue: '#1E90FF',
+        black: '#000000',
+        wPrimaryWhite: '#F0F0F0',
+        wSecondaryWhite: '#fdffff',
+        wOffsetWhite: '#DFDFDF',
+        wPrimaryGray: '#C0C0C0',
+        wSecondaryGray: '#818181',
+        wBlue: '#0827f5',
+        wTeal: '#008080',
+        wDarkerTeal: '#007777',
+        wPink: '#ff0081'
       }
     },
   },

@@ -1,0 +1,36 @@
+<footer
+        class="fixed bottom-0 left-0 px-0.5 w-full bg-wPrimaryGray border-t-2 border-wOffsetWhit flex divide-x-2 divide-gray-400 ">
+    <div
+            class="fixed bottom-7 w95-borderOutset left-0 w-48 h-96 bg-wPrimaryGray flex gap-1"
+         *ngIf="startIsActive">
+        <div class="bg-blue-900 text-while font-sans font-extrabold tracking-wide w-1/6 flex flex-col justify-end px-2">
+            <div
+                    class="-rotate-90  items-center justify-items-center  text-white bottom-0 flex">Windows
+                <span class="font-light">95</span></div>
+        </div>
+        <div class="">
+            <ul>
+                <li>
+                    <img src="" alt="">
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button
+            class="font-black text-black text-center mx-1 my-0.5 px-0.5  flex gap-1 justify-start items-center"
+            [ngClass]="{'w95-borderOutset':!startIsActive, 'w95-borderInsetMd': startIsActive}">
+        <img src="./assets/icons/w95_40.ico" alt="logo" class="w-4">
+        <span (click)="startIsActive=!startIsActive" class="font-sans text-black text-xs font-bold">Start</span>
+    </button>
+    <div class="flex p-1 gap-1.5 justify-center items-center">
+        <img src="./assets/icons/w95_14.ico" alt="logo" class="w-4 h-4 cursor-pointer">
+        <img src="./assets/icons/w95_13.ico" alt="logo" class="w-4 h-4 cursor-pointer">
+        <img src="./assets/icons/w95_12.ico" alt="logo" class="w-4 h-4 cursor-pointer">
+        <img src="./assets/icons/w95_11.ico" alt="logo" class="w-4 h-4 cursor-pointer">
+    </div>
+    <div class="fixed border-2 right-0 mx-2 p-0.5 flex justify-center items-center gap-1.5">
+        <img src="./assets/icons/w98_time_and_date.ico" alt="logo" class="w-4 h-4 cursor-pointer">
+        <span class="text-xs font-bold">{{currentDate | date: 'shortTime'}}</span>
+    </div>
+</footer>
