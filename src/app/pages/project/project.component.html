@@ -1,0 +1,87 @@
+<div
+        class="fixed top-4 left-1/2 -translate-x-1/2  w-1/4 border-2 border-wOffsetWhite w95-borderOutset bg-wPrimaryGray h-auto max-sm:w-3/4 max-sm:top-1/2 max-lg:w-1/3 shadow-xl">
+    <div class="bg-gradient-to-r from-blue-950 to-blue-500 flex gap-1 py-0.5 px-1 justify-between">
+        <div class="flex gap-1 justify-center items-center">
+            <img src="./assets/icons/w98_directory_open_file_mydocs_2k.ico" alt="authorization" class="w-4 h-4">
+            <span class="text-wPrimaryWhite text-sm">Projects</span>
+        </div>
+        <div class="text-xs font-sans font-bold flex gap-0.5 justify-center items-center">
+            <button
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">&#95;
+            </button>
+            <button
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">&#9633;
+            </button>
+            <button
+                    routerLink="/home"
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">X
+            </button>
+        </div>
+    </div>
+    <div>
+        <div class="bg-wPrimaryGray w-full h-4 p-0.5">
+        </div>
+        <div
+                class="text-xs tracking-wide text-black  bg-wPrimaryGray border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 ">
+            <form class="flex flex-col items-center gap-4" [formGroup]="projectForm" (ngSubmit)="onAddProject()">
+                <div class="flex w-full justify-center items-center">
+                    <label for="login" class="w-1/4 text-sm">Title</label>
+                    <div class="w-4/5">
+                        <input type="text" id="login" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm "
+                               formControlName="title">
+                        <div class="text-red font-bold py-1" *ngIf="false">
+                            <div >
+                                Login is required
+                            </div>
+                            <div >
+                                Login must be at least 3 characters long.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--                <div class="flex w-full justify-center items-center">-->
+                <!--                    <label for="img" class="w-1/4 text-sm">Image</label>-->
+                <!--                    <div class="w-4/5">-->
+                <!--                        <input type="file" id="img" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm font-extrabold"-->
+                <!--                               (change)="onFileSelected($event)"-->
+                <!--                               formControlName="title">-->
+                <!--                        <div class="text-red font-bold py-1">-->
+                <!--                            <div >-->
+                <!--                                Login is required-->
+                <!--                            </div>-->
+                <!--                            <div >-->
+                <!--                                Login must be at least 3 characters long.-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <div class="flex w-full justify-center items-center">
+                    <label for="desc" class="w-1/4 text-sm ">Description</label>
+
+                    <div class="w-4/5">
+                        <textarea name="" id="desc"  rows="10" formControlName="desc"
+                                  class="w-full w95-borderInsetSm px-2 px-1 text-sm focus:outline-0">
+
+                        </textarea>
+                        <div class="text-red font-bold py-1" *ngIf="false">
+                            <div >
+                                Password is required
+                            </div>
+                            <div >
+                                Password must be at least 3 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="bg-wPrimaryGray w95-borderOutset w-1/4 text-sm py-1 px-2">
+                    <!--                        [disabled]="projectForm.invalid">
+                    -->
+                    Add Project
+                </button>
+            </form>
+        </div>
+        <div class="bg-wPrimaryGray w-full h-4 p-0.5">
+        </div>
+    </div>
+</div>

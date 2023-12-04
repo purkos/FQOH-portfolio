@@ -22,63 +22,15 @@
         <div class="bg-wPrimaryGray w-full h-4 p-0.5">
         </div>
         <div
-                class="text-xs tracking-wide text-black  bg-wPrimaryGray border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 ">
-            <form class="flex flex-col items-center gap-4" [formGroup]="projectForm" (ngSubmit)="onAddProject()">
-                <div class="flex w-full justify-center items-center">
-                    <label for="login" class="w-1/4 text-sm">Title</label>
-                    <div class="w-4/5">
-                        <input type="text" id="login" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm font-extrabold"
-                               formControlName="title">
-                        <div class="text-red font-bold py-1">
-                            <div >
-                                Login is required
-                            </div>
-                            <div >
-                                Login must be at least 3 characters long.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!--                <div class="flex w-full justify-center items-center">-->
-<!--                    <label for="img" class="w-1/4 text-sm">Image</label>-->
-<!--                    <div class="w-4/5">-->
-<!--                        <input type="file" id="img" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm font-extrabold"-->
-<!--                               (change)="onFileSelected($event)"-->
-<!--                               formControlName="title">-->
-<!--                        <div class="text-red font-bold py-1">-->
-<!--                            <div >-->
-<!--                                Login is required-->
-<!--                            </div>-->
-<!--                            <div >-->
-<!--                                Login must be at least 3 characters long.-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <div class="flex w-full justify-center items-center">
-                    <label for="desc" class="w-1/4 text-sm">Description</label>
-
-                    <div class="w-4/5">
-                        <textarea name="" id="desc"  rows="10" formControlName="desc" class="w-full">
-
-                        </textarea>
-                        <div class="text-red font-bold py-1">
-                            <div >
-                                Password is required
-                            </div>
-                            <div >
-                                Password must be at least 3 characters long.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="bg-wPrimaryGray w95-borderOutset w-1/4 text-sm py-1 px-2">
-<!--                        [disabled]="projectForm.invalid">
--->
-                       Add Project
-                </button>
-            </form>
+                class="text-xs tracking-wide text-black  bg-wPrimaryWhite border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 flex  gap-4"
+        *ngIf="!projectShowId">
+            <app-project-item *ngFor="let project of projects" [projectItem]="project"
+                              (projectId)="showProject($event)"></app-project-item>
+        </div>
+        <div
+                class="text-xs tracking-wide text-black  bg-wPrimaryWhite border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 flex  gap-4"
+                *ngIf="projectShowId">
+            <app-project-view-item ></app-project-view-item>
         </div>
         <div class="bg-wPrimaryGray w-full h-4 p-0.5">
         </div>

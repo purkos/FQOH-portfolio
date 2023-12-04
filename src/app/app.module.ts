@@ -11,8 +11,13 @@ import {AuthComponent} from './pages/auth/auth.component';
 import {ProjectsComponent} from './pages/projects/projects.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { ProjectComponent } from './pages/project/project.component';
+import { ProjectItemComponent } from './pages/projects/project-item/project-item.component';
+import { ProjectViewItemComponent } from './pages/projects/project-view-item/project-view-item.component';
+import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
 
 @NgModule({
+    bootstrap: [AppComponent],
     declarations: [
         AppComponent,
         FooterComponent,
@@ -20,7 +25,11 @@ import {HttpClientModule} from "@angular/common/http";
         NavigationComponent,
         AboutComponent,
         AuthComponent,
-        ProjectsComponent
+        ProjectsComponent,
+        ProjectComponent,
+        ProjectItemComponent,
+        ProjectViewItemComponent,
+        LoadingSpinnerComponent
     ],
     imports: [
         BrowserModule,
@@ -29,8 +38,7 @@ import {HttpClientModule} from "@angular/common/http";
         ReactiveFormsModule,
         HttpClientModule
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: []
 })
 export class AppModule {
 }
