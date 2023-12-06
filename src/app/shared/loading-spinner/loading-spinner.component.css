@@ -1,0 +1,39 @@
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 0.8rem;
+  width: 0.6rem;
+  background: rgb(230, 230, 230);
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 1rem;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 2rem;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 3rem;
+  animation-delay: 0s;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 0.1rem;
+    height: 2rem;
+  }
+  50%, 100% {
+    top: 0.8rem;
+    height: 1rem;
+  }
+}
+
+/*# sourceMappingURL=loading-spinner.component.css.map */

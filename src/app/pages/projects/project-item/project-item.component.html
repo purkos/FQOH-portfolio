@@ -1,0 +1,7 @@
+<!-- project-item.component.html -->
+
+<div class="flex flex-col justify-center items-center gap-1 hover:rounded hover:bg-zinc-200 py-2 px-2 transition-all duration-100 hover:cursor-pointer"
+     (click)="onShowProject(projectItem.id)">
+    <img src="{{projectItem.img ? projectItem.img : './assets/icons/w98_imagOthe.ico'}}" alt="" class="w-10 h-10">
+    <span class="text-sm">{{projectItem.title}}</span>
+</div>

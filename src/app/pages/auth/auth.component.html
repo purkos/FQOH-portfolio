@@ -1,0 +1,94 @@
+<div
+        class="fixed top-4 left-1/2 -translate-x-1/2  w-1/4 border-2 border-wOffsetWhite w95-borderOutset bg-wPrimaryGray h-auto max-sm:w-3/4 max-sm:top-1/2 max-lg:w-1/3 shadow-xl">
+    <div
+            class="flex flex-col gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 z-10 w95-borderOutset bg-wPrimaryGray justify-center items-center p-4"
+            *ngIf="error">
+        <span class="text-center">{{error}}</span>
+        <button class="w95-borderOutset w-1/3 py-0.5 px-2 flex justify-center items-center" (click)="onClearError()">OK
+        </button>
+    </div>
+    <div class="bg-gradient-to-r from-blue-950 to-blue-500 flex gap-1 py-0.5 px-1 justify-between">
+        <div class="flex gap-1 justify-center items-center">
+            <img src="./assets/icons/w98_key_padlock.ico" alt="authorization" class="w-4 h-4">
+            <div class="flex gap-2 text-white justify-center items-center">
+                <span class="text-wPrimaryWhite text-sm">Authentication</span>
+                <span>-</span>
+                <span class="text-wPrimaryWhite text-sm">{{isLoginMode ? 'Login' : 'Sign Up'}}</span>
+            </div>
+        </div>
+        <div class="text-xs font-sans font-bold flex gap-0.5 justify-center items-center">
+            <button
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">
+                &#95;
+            </button>
+            <button
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">
+                &#9633;
+            </button>
+            <button
+                    routerLink="/home"
+                    class="bg-wPrimaryGray border-2 border-l-wOffsetWhite border-t-wOffsetWhite border-b-gray-700 border-r-gray-700 w-4 h-4 px-1 gap-0.5 flex justify-center items-center">
+                X
+            </button>
+        </div>
+    </div>
+
+    <div>
+
+        <div class="bg-wPrimaryGray w-full h-4 p-0.5">
+        </div>
+        <div
+                class="text-xs tracking-wide text-black  bg-wPrimaryGray border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 ">
+            <div class="flex justify-center items-center transform py-2" *ngIf="isLoading">
+                <app-loading-spinner class="-translate-x-full"></app-loading-spinner>
+            </div>
+            <form class="flex flex-col items-center gap-4" [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+                <div class="flex w-full justify-center items-center">
+                    <label for="email" class="w-1/4 text-sm">Email</label>
+                    <div class="w-4/5">
+                        <input type="text" id="email" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm font-extrabold"
+                               formControlName="email">
+                        <div class="text-red font-bold py-1">
+                            <div *ngIf="form.get('email')?.hasError('required') &&
+                            form.get('email')?.touched">
+                                Email is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex w-full justify-center items-center">
+                    <label for="password" class="w-1/4 text-sm">Password</label>
+
+                    <div class="w-4/5">
+                        <input type="password" id="password" class="w-3/4 w95-borderInsetSm h-6 px-2 text-sm font-black"
+                               formControlName="password">
+                        <div class="text-red font-bold py-1">
+                            <div *ngIf="form.get('password')?.hasError('required') &&
+                            form.get('password')?.touched">
+                                Password is required
+                            </div>
+                            <div *ngIf="form.get('password')?.hasError('minlength') &&
+                            form.get('password')?.touched">
+                                Password must be at least 6 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex gap-1">
+                    <button class="bg-wPrimaryGray w95-borderOutset text-sm px-1" type="submit"
+                            [disabled]="form.invalid || !isLoginMode">{{isLoginMode ? 'Login' :
+                        'Sign Up'}}
+                    </button>
+                    <button  class="bg-wPrimaryGray w95-borderOutset  text-sm px-1"
+                            (click)="onSwitchMode()"
+                            type="button"
+                    >Switch to {{isLoginMode ? 'Sign Up' : 'Login'}}
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="bg-wPrimaryGray w-full h-4 p-0.5">
+        </div>
+    </div>
+</div>

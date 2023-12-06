@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@font-face
+  font-family: 'MS Sans Serif'
+  src: url("assets/fonts/w95fa.woff") format("woff")
+       //url("assets/fonts/w95fa.woff2") format("woff2")
+
+
+.w95-font
+  font-family: "MS Sans Serif", sans-serif
+  font-weight: 900
+
+body
+  font-family: "MS Sans Serif", sans-serif
+  background-color: teal
+
+.w95-borderOutset
+  border-style: outset
+  border-width: 0.2rem
+  border-color: rgba(223,223,223)
+
+
+.w95-borderInsetMd
+  border-style: inset
+  border-width: 0.2rem
+  border-color: rgba(223,223,223)
+
+.w95-borderInsetSm
+  border-style: inset
+  border-width: 0.15rem
+  border-color: rgba(223,223,223)
+
+input:focus
+  outline: none
