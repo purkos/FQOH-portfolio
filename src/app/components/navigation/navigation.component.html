@@ -1,5 +1,6 @@
 <div class="">
     <ul class="flex flex-col items-start gap-3 text-sm font-light ">
+<<<<<<< HEAD
         <li class="w-1/4 p-0.5 rounded flex justify-center items-center hover:bg-wDarkerTeal transition duration-100" >
             <button routerLink="/auth"
                     class="flex flex-col text-wPrimaryWhite justify-center items-center gap-0.5 hover:cursor-pointer">
@@ -10,6 +11,27 @@
         <li class="w-1/4 p-0.5 rounded flex justify-center items-center hover:bg-wDarkerTeal transition duration-100"
             *ngIf="authService.isAuthenticated()">
             <button routerLink="/projects"
+=======
+        <li class="w-1/4 p-0.5 rounded flex justify-center items-center hover:bg-wDarkerTeal transition duration-100"
+            *ngIf="!isAuthenticated">
+            <button routerLink="/auth"
+                    class="flex flex-col text-wPrimaryWhite justify-center items-center gap-0.5 hover:cursor-pointer">
+                <img src="./assets/icons/w98_key_padlock.ico" alt="authorization" class="w-10 h-10">
+                <span class="text-base">Authentication</span>
+            </button>
+        </li>
+        <li class="w-1/4 p-0.5 rounded flex justify-center items-center hover:bg-wDarkerTeal transition duration-100"
+            *ngIf="isAuthenticated">
+            <button (click)="onLogout()"
+                    class="flex flex-col text-wPrimaryWhite justify-center items-center gap-0.5 hover:cursor-pointer">
+                <img src="./assets/icons/w98_key_padlock.ico" alt="authorization" class="w-10 h-10">
+                <span class="text-base">Logout</span>
+            </button>
+        </li>
+        <li class="w-1/4 p-0.5 rounded flex justify-center items-center hover:bg-wDarkerTeal transition duration-100"
+            *ngIf="isAuthenticated">
+            <button routerLink="/project"
+>>>>>>> master
                     class="flex flex-col text-wPrimaryWhite justify-center items-center gap-0.5 hover:cursor-pointer">
                 <img src="./assets/icons/w98_address_book_pad.ico" alt="addProject" class="w-10 h-10">
                 <span class="text-base">Add project</span>
@@ -29,5 +51,9 @@
                 <span class="text-base">My projects</span>
             </button>
         </li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     </ul>
 </div>

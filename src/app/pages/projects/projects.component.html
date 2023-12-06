@@ -1,5 +1,9 @@
 <div
+<<<<<<< HEAD
         class="fixed top-4 left-1/2 -translate-x-1/2  w-1/4 border-2 border-wOffsetWhite w95-borderOutset bg-wPrimaryGray h-auto max-sm:w-3/4 max-sm:top-1/2 max-lg:w-1/3 shadow-xl">
+=======
+        class="fixed top-4 left-1/2 -translate-x-1/2  w-1/4 border-2 border-wOffsetWhite w95-borderOutset bg-wPrimaryGray h-auto max-sm:w-3/4 max-sm:justify-center max-lg:w-1/3 shadow-xl">
+>>>>>>> master
     <div class="bg-gradient-to-r from-blue-950 to-blue-500 flex gap-1 py-0.5 px-1 justify-between">
         <div class="flex gap-1 justify-center items-center">
             <img src="./assets/icons/w98_directory_open_file_mydocs_2k.ico" alt="authorization" class="w-4 h-4">
@@ -22,6 +26,7 @@
         <div class="bg-wPrimaryGray w-full h-4 p-0.5">
         </div>
         <div
+<<<<<<< HEAD
                 class="text-xs tracking-wide text-black  bg-wPrimaryGray border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 ">
             <form class="flex flex-col items-center gap-4" [formGroup]="projectForm" (ngSubmit)="onAddProject()">
                 <div class="flex w-full justify-center items-center">
@@ -79,6 +84,20 @@
                        Add Project
                 </button>
             </form>
+=======
+                class="text-xs tracking-wide text-black  bg-wPrimaryWhite border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 flex  gap-4 flex-wrap h-auto"
+        *ngIf="!projectShowId">
+            <div class="relative left-1/3 top-1/2 transform " *ngIf="isLoading">
+                <app-loading-spinner class="-translate-x-full"></app-loading-spinner>
+            </div>
+            <app-project-item *ngFor="let proj of projects" [projectItem]="proj"></app-project-item>
+<!--            <div *ngFor="let project of projects">{{project | json}}</div>-->
+        </div>
+        <div
+                class="text-xs tracking-wide text-black  bg-wPrimaryWhite border-2 border-l-gray-700 border-t-gray-700 border-r-gray-200 border-b-gray-200 p-4 flex  gap-4"
+                *ngIf="projectShowId">
+            <app-project-view-item ></app-project-view-item>
+>>>>>>> master
         </div>
         <div class="bg-wPrimaryGray w-full h-4 p-0.5">
         </div>

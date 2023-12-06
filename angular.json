@@ -119,6 +119,16 @@
             ],
             "scripts": []
           }
+<<<<<<< HEAD
+=======
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "test:build:production"
+          }
+>>>>>>> master
         }
       }
     }
@@ -126,4 +136,8 @@
   "cli": {
     "analytics": "b3c77504-5748-49a2-bd51-8578c0dee499"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
